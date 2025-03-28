@@ -11,7 +11,7 @@ members = [
 [[package]]
 name = "youtube-music-api-client"
 version = "0.1.0"
-source = { virtual = "src/libs/youtube-music-api-client" }
+source = { editable = "src/libs/youtube-music-api-client" }
 
 [[package]]
 name = "youtube-music-twitch-song-request"
@@ -22,4 +22,4 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "youtube-music-api-client", virtual = "src/libs/youtube-music-api-client" }]
+requires-dist = [{ name = "youtube-music-api-client", editable = "src/libs/youtube-music-api-client" }]
