@@ -1,0 +1,25 @@
+version = 1
+revision = 1
+requires-python = ">=3.13"
+
+[manifest]
+members = [
+    "youtube-music-api-client",
+    "youtube-music-twitch-song-request",
+]
+
+[[package]]
+name = "youtube-music-api-client"
+version = "0.1.0"
+source = { virtual = "src/libs/youtube-music-api-client" }
+
+[[package]]
+name = "youtube-music-twitch-song-request"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "youtube-music-api-client" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "youtube-music-api-client", virtual = "src/libs/youtube-music-api-client" }]

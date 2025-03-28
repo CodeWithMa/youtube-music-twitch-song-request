@@ -1,0 +1,7 @@
+[project]
+name = "youtube-music-api-client"
+version = "0.1.0"
+description = "Api client for youtube-music api server plugin"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
