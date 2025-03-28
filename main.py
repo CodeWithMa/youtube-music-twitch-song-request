@@ -1,9 +1,11 @@
-from youtube_music_api_client.main import main as main_p1
-#from test.main import main as main_p1
+from youtube_music_api_client.main import search, queue
+
 
 def main():
-    main_p1()
-    print("Hello from youtube-music-twitch-song-request!")
+    video_id = search("Never gonna")
+    if video_id is None:
+        return
+    queue(video_id)
 
 
 if __name__ == "__main__":
