@@ -27,6 +27,24 @@ class YoutubeMusicApiClient:
         self.token = accessToken
 
 
+    def get_current_song(self):
+        url = f"{self.api_base_url_v1}/song"
+        headers = {
+            "accept": "application/json",
+            "Authorization": f"Bearer {self.token}",
+            "Content-Type": "application/json",
+        }
+
+        response = requests.get(url, headers=headers)
+
+        print("Status: ", response.status_code)
+
+        if response.status_code != 200:
+            return None
+
+        return response.json()
+
+
     def search(self, query: str):
         url = f"{self.api_base_url_v1}/search"
         headers = {
