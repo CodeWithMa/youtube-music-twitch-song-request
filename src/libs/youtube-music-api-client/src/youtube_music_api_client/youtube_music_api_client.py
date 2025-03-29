@@ -45,6 +45,19 @@ class YoutubeMusicApiClient:
         return response.json()
 
 
+    def toggle_play(self):
+        url = f"{self.api_base_url_v1}/toggle-play"
+        headers = {
+            "accept": "application/json",
+            "Authorization": f"Bearer {self.token}",
+            "Content-Type": "application/json",
+        }
+
+        response = requests.post(url, headers=headers)
+
+        print("Status: ", response.status_code)
+
+
     def search(self, query: str):
         url = f"{self.api_base_url_v1}/search"
         headers = {
