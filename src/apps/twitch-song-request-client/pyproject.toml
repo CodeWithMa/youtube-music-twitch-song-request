@@ -1,0 +1,14 @@
+[project]
+name = "twitch-song-request-client"
+version = "0.1.0"
+description = "Client to connect to twitch chat and watch for song requests"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["python-dotenv", "twitchAPI"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/twitch_song_request_client"]

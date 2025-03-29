@@ -4,10 +4,11 @@ version = "0.1.0"
 description = "Add song requests from twitch chat to youtube music"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = ["youtube-music-api-client"]
+dependencies = ["youtube-music-api-client", "twitch-song-request-client"]
 
 [tool.uv.sources]
 youtube-music-api-client = { workspace = true }
+twitch-song-request-client = { workspace = true }
 
 [tool.uv.workspace]
-members = ["src/libs/youtube-music-api-client"]
+members = ["src/libs/youtube-music-api-client", "src/apps/twitch-song-request-client"]
