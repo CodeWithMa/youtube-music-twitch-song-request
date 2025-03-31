@@ -22,3 +22,18 @@ Register an application in your [twitch dev dashboard](https://dev.twitch.tv/con
 ```bash
 uv run main.py
 ```
+
+## First start
+
+### youtube-music
+
+At the first start you will have to allow access to youtube-music-api.
+A box will open which you have to allow.
+
+After pressing Allow the connection fails.
+For it to work you have to restart youtube-music.
+
+### twitch api
+
+The browser will open twitch and you can log in with the account you want the bot to use.
+After logging in tokens will be saved in `user_token.json`.

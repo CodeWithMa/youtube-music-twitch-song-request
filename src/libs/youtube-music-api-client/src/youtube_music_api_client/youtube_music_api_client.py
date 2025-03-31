@@ -8,8 +8,7 @@ class YoutubeMusicApiClient:
         self.token = ""
 
     def authenticate(self):
-        # TODO Use real client id: youtube-music-twitch-song-request
-        client_id = "1"
+        client_id = "youtube-music-twitch-song-request"
         url = f"{self.api_base_url}/auth/{client_id}"
 
         headers = {"accept": "application/json"}
