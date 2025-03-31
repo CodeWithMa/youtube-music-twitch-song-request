@@ -51,9 +51,19 @@ class TwitchClient():
             if self.search_and_queue is None:
                 return
 
+            if len(cmd.parameter) == 0:
+                await cmd.reply("Please provide a song request")
+                return
+
             print(f"Received song request: {cmd.parameter}")
-            self.search_and_queue(cmd.parameter)
-            # TODO Reply to the user with added song
+            search_result = self.search_and_queue(cmd.parameter)
+            
+            # Reply to the user with added song
+            if search_result is None:
+                await cmd.reply("Could not find song")
+            else:
+                title, video_id = search_result
+                await cmd.reply(f"Added {title} to queue")
 
         twitch = await Twitch(APP_ID, APP_SECRET)
         helper = UserAuthenticationStorageHelper(twitch, USER_SCOPE)
