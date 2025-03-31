@@ -86,16 +86,20 @@ class YoutubeMusicApiClient:
         contents = response.json()["contents"]["tabbedSearchResultsRenderer"]["tabs"][
             0
         ]["tabRenderer"]["content"]["sectionListRenderer"]["contents"][1]
+        
         if "musicCardShelfRenderer" in contents:
             first_search_result = contents["musicCardShelfRenderer"]["title"]["runs"][0]
             title = first_search_result['text']
+            
             print(f"Adding first search result: {title}")
-            video_id = first_search_result["navigationEndpoint"]["watchEndpoint"][
-                "videoId"
-            ]
-            print(f"Video ID: {video_id}")
 
-            return title, video_id
+            if "watchEndpoint" in first_search_result["navigationEndpoint"]:
+                video_id = first_search_result["navigationEndpoint"]["watchEndpoint"][
+                    "videoId"
+                ]
+                print(f"Video ID: {video_id}")
+
+                return title, video_id
 
         return None
 
